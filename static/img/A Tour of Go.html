@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<!-- saved from url=(0030)http://127.0.0.1:3999/basics/4 -->
+<html lang="en" ng-app="tour" class="ng-scope gr__127_0_0_1"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <title>A Tour of Go</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <link rel="shortcut icon" sizes="196x196" href="http://127.0.0.1:3999/favicon.ico">
+    <link rel="stylesheet" href="./A Tour of Go_files/app.css">
+    <link rel="stylesheet" href="./A Tour of Go_files/codemirror.css">
+    <link href="./A Tour of Go_files/css" rel="stylesheet" type="text/css">
+<style type="text/css">@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak{display:none;}ng\:form{display:block;}</style></head>
+
+<body data-gr-c-s-loaded="true" style="">
+    <div class="bar top-bar">
+        <a class="left logo" href="http://127.0.0.1:3999/list">A Tour of Go</a>
+        <div table-of-contents-button=".toc"><span class="nav" title="Table of Contents">
+	<svg viewBox="0 0 24 24" height="100%" width="100%" preserveAspectRatio="xMidYMid meet" fit="" style="pointer-events: none; display: block;"><g><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"></path></g></svg>
+</span></div>
+        <div feedback-button=""><span class="nav" title="Send feedback about this page">
+	<svg id="feedback-button" viewBox="0 0 24 24" height="100%" width="100%" preserveAspectRatio="xMidYMid meet" fit="" style="pointer-events: none; display: block;"><g><path d="M20 8h-2.81c-.45-.78-1.07-1.45-1.82-1.96L17 4.41 15.59 3l-2.17 2.17C12.96 5.06 12.49 5 12 5c-.49 0-.96.06-1.41.17L8.41 3 7 4.41l1.62 1.63C7.88 6.55 7.26 7.22 6.81 8H4v2h2.09c-.05.33-.09.66-.09 1v1H4v2h2v1c0 .34.04.67.09 1H4v2h2.81c1.04 1.79 2.97 3 5.19 3s4.15-1.21 5.19-3H20v-2h-2.09c.05-.33.09-.66.09-1v-1h2v-2h-2v-1c0-.34-.04-.67-.09-1H20V8zm-6 8h-4v-2h4v2zm0-4h-4v-2h4v2z"></path></g></svg>
+</span></div>
+    </div>
+
+    <div table-of-contents=""><div class="toc" style="display: none;">
+    <ul>
+        <!-- ngRepeat: m in toc.modules --><li ng-repeat="m in toc.modules" class="toc-module ng-scope" id="toc-m-mechanics">
+            <span class="ng-binding">Using the tour</span>
+            <ul>
+                <!-- ngRepeat: l in m.lessons --><li ng-repeat="l in m.lessons" class="toc-lesson ng-scope" id="toc-l-welcome" ng-class="{active: l==params.lessonId}">
+                    <span ng-click="toggleLesson(l)" class="ng-binding">Welcome!</span>
+                    <ul>
+                        <!-- ngRepeat: p in m.lesson[l].Pages --><li ng-repeat="p in m.lesson[l].Pages" class="toc-page ng-scope" ng-class="{active: l==params.lessonId &amp;&amp; $index+1==params.pageNumber}" style="display: none;">
+                            <a href="http://127.0.0.1:3999/welcome/1" ng-click="hideTOC(true)" class="ng-binding">Hello, 世界</a>
+                        </li><li ng-repeat="p in m.lesson[l].Pages" class="toc-page ng-scope" ng-class="{active: l==params.lessonId &amp;&amp; $index+1==params.pageNumber}" style="display: none;">
+                            <a href="http://127.0.0.1:3999/welcome/2" ng-click="hideTOC(true)" class="ng-binding">Go local</a>
+                        </li><li ng-repeat="p in m.lesson[l].Pages" class="toc-page ng-scope" ng-class="{active: l==params.lessonId &amp;&amp; $index+1==params.pageNumber}" style="display: none;">
+                            <a href="http://127.0.0.1:3999/welcome/3" ng-click="hideTOC(true)" class="ng-binding">Congratulations</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </li><li ng-repeat="m in toc.modules" class="toc-module ng-scope" id="toc-m-basics">
+            <span class="ng-binding">Basics</span>
+            <ul>
+                <!-- ngRepeat: l in m.lessons --><li ng-repeat="l in m.lessons" class="toc-lesson ng-scope active" id="toc-l-basics" ng-class="{active: l==params.lessonId}">
+                    <span ng-click="toggleLesson(l)" class="ng-binding">Packages, variables, and functions.</span>
+                    <ul>
+                        <!-- ngRepeat: p in m.lesson[l].Pages --><li ng-repeat="p in m.lesson[l].Pages" class="toc-page ng-scope" ng-class="{active: l==params.lessonId &amp;&amp; $index+1==params.pageNumber}" style="display: list-item;">
+                            <a href="http://127.0.0.1:3999/basics/1" ng-click="hideTOC(true)" class="ng-binding">Packages</a>
+                        </li><li ng-repeat="p in m.lesson[l].Pages" class="toc-page ng-scope" ng-class="{active: l==params.lessonId &amp;&amp; $index+1==params.pageNumber}" style="display: list-item;">
+                            <a href="http://127.0.0.1:3999/basics/2" ng-click="hideTOC(true)" class="ng-binding">Imports</a>
+                        </li><li ng-repeat="p in m.lesson[l].Pages" class="toc-page ng-scope" ng-class="{active: l==params.lessonId &amp;&amp; $index+1==params.pageNumber}" style="display: list-item;">
+                            <a href="http://127.0.0.1:3999/basics/3" ng-click="hideTOC(true)" class="ng-binding">Exported names</a>
+                        </li><li ng-repeat="p in m.lesson[l].Pages" class="toc-page ng-scope active" ng-class="{active: l==params.lessonId &amp;&amp; $index+1==params.pageNumber}" style="display: list-item;">
+                            <a href="http://127.0.0.1:3999/basics/4" ng-click="hideTOC(true)" class="ng-binding">Functions</a>
+                        </li><li ng-repeat="p in m.lesson[l].Pages" class="toc-page ng-scope" ng-class="{active: l==params.lessonId &amp;&amp; $index+1==params.pageNumber}" style="display: list-item;">
+                            <a href="http://127.0.0.1:3999/basics/5" ng-click="hideTOC(true)" class="ng-binding">Functions continued</a>
+                        </li><li ng-repeat="p in m.lesson[l].Pages" class="toc-page ng-scope" ng-class="{active: l==params.lessonId &amp;&amp; $index+1==params.pageNumber}" style="display: list-item;">
+                            <a href="http://127.0.0.1:3999/basics/6" ng-click="hideTOC(true)" class="ng-binding">Multiple results</a>
+                        </li><li ng-repeat="p in m.lesson[l].Pages" class="toc-page ng-scope" ng-class="{active: l==params.lessonId &amp;&amp; $index+1==params.pageNumber}" style="display: list-item;">
+                            <a href="http://127.0.0.1:3999/basics/7" ng-click="hideTOC(true)" class="ng-binding">Named return values</a>
+                        </li><li ng-repeat="p in m.lesson[l].Pages" class="toc-page ng-scope" ng-class="{active: l==params.lessonId &amp;&amp; $index+1==params.pageNumber}" style="display: list-item;">
+                            <a href="http://127.0.0.1:3999/basics/8" ng-click="hideTOC(true)" class="ng-binding">Variables</a>
+                        </li><li ng-repeat="p in m.lesson[l].Pages" class="toc-page ng-scope" ng-class="{active: l==params.lessonId &amp;&amp; $index+1==params.pageNumber}" style="display: list-item;">
+                            <a href="http://127.0.0.1:3999/basics/9" ng-click="hideTOC(true)" class="ng-binding">Variables with initializers</a>
+                        </li><li ng-repeat="p in m.lesson[l].Pages" class="toc-page ng-scope" ng-class="{active: l==params.lessonId &amp;&amp; $index+1==params.pageNumber}" style="display: list-item;">
+                            <a href="http://127.0.0.1:3999/basics/10" ng-click="hideTOC(true)" class="ng-binding">Short variable declarations</a>
+                        </li><li ng-repeat="p in m.lesson[l].Pages" class="toc-page ng-scope" ng-class="{active: l==params.lessonId &amp;&amp; $index+1==params.pageNumber}" style="display: list-item;">
+                            <a href="http://127.0.0.1:3999/basics/11" ng-click="hideTOC(true)" class="ng-binding">Basic types</a>
+                        </li><li ng-repeat="p in m.lesson[l].Pages" class="toc-page ng-scope" ng-class="{active: l==params.lessonId &amp;&amp; $index+1==params.pageNumber}" style="display: list-item;">
+                            <a href="http://127.0.0.1:3999/basics/12" ng-click="hideTOC(true)" class="ng-binding">Zero values</a>
+                        </li><li ng-repeat="p in m.lesson[l].Pages" class="toc-page ng-scope" ng-class="{active: l==params.lessonId &amp;&amp; $index+1==params.pageNumber}" style="display: list-item;">
+                            <a href="http://127.0.0.1:3999/basics/13" ng-click="hideTOC(true)" class="ng-binding">Type conversions</a>
+                        </li><li ng-repeat="p in m.lesson[l].Pages" class="toc-page ng-scope" ng-class="{active: l==params.lessonId &amp;&amp; $index+1==params.pageNumber}" style="display: list-item;">
+                            <a href="http://127.0.0.1:3999/basics/14" ng-click="hideTOC(true)" class="ng-binding">Type inference</a>
+                        </li><li ng-repeat="p in m.lesson[l].Pages" class="toc-page ng-scope" ng-class="{active: l==params.lessonId &amp;&amp; $index+1==params.pageNumber}" style="display: list-item;">
+                            <a href="http://127.0.0.1:3999/basics/15" ng-click="hideTOC(true)" class="ng-binding">Constants</a>
+                        </li><li ng-repeat="p in m.lesson[l].Pages" class="toc-page ng-scope" ng-class="{active: l==params.lessonId &amp;&amp; $index+1==params.pageNumber}" style="display: list-item;">
+                            <a href="http://127.0.0.1:3999/basics/16" ng-click="hideTOC(true)" class="ng-binding">Numeric Constants</a>
+                        </li><li ng-repeat="p in m.lesson[l].Pages" class="toc-page ng-scope" ng-class="{active: l==params.lessonId &amp;&amp; $index+1==params.pageNumber}" style="display: list-item;">
+                            <a href="http://127.0.0.1:3999/basics/17" ng-click="hideTOC(true)" class="ng-binding">Congratulations!</a>
+                        </li>
+                    </ul>
+                </li><li ng-repeat="l in m.lessons" class="toc-lesson ng-scope" id="toc-l-flowcontrol" ng-class="{active: l==params.lessonId}">
+                    <span ng-click="toggleLesson(l)" class="ng-binding">Flow control statements: for, if, else, switch and defer</span>
+                    <ul>
+                        <!-- ngRepeat: p in m.lesson[l].Pages --><li ng-repeat="p in m.lesson[l].Pages" class="toc-page ng-scope" ng-class="{active: l==params.lessonId &amp;&amp; $index+1==params.pageNumber}" style="display: none;">
+                            <a href="http://127.0.0.1:3999/flowcontrol/1" ng-click="hideTOC(true)" class="ng-binding">For</a>
+                        </li><li ng-repeat="p in m.lesson[l].Pages" class="toc-page ng-scope" ng-class="{active: l==params.lessonId &amp;&amp; $index+1==params.pageNumber}" style="display: none;">
+                            <a href="http://127.0.0.1:3999/flowcontrol/2" ng-click="hideTOC(true)" class="ng-binding">For continued</a>
+                        </li><li ng-repeat="p in m.lesson[l].Pages" class="toc-page ng-scope" ng-class="{active: l==params.lessonId &amp;&amp; $index+1==params.pageNumber}" style="display: none;">
+                            <a href="http://127.0.0.1:3999/flowcontrol/3" ng-click="hideTOC(true)" class="ng-binding">For is Go's "while"</a>
+                        </li><li ng-repeat="p in m.lesson[l].Pages" class="toc-page ng-scope" ng-class="{active: l==params.lessonId &amp;&amp; $index+1==params.pageNumber}" style="display: none;">
+                            <a href="http://127.0.0.1:3999/flowcontrol/4" ng-click="hideTOC(true)" class="ng-binding">Forever</a>
+                        </li><li ng-repeat="p in m.lesson[l].Pages" class="toc-page ng-scope" ng-class="{active: l==params.lessonId &amp;&amp; $index+1==params.pageNumber}" style="display: none;">
+                            <a href="http://127.0.0.1:3999/flowcontrol/5" ng-click="hideTOC(true)" class="ng-binding">If</a>
+                        </li><li ng-repeat="p in m.lesson[l].Pages" class="toc-page ng-scope" ng-class="{active: l==params.lessonId &amp;&amp; $index+1==params.pageNumber}" style="display: none;">
+                            <a href="http://127.0.0.1:3999/flowcontrol/6" ng-click="hideTOC(true)" class="ng-binding">If with a short statement</a>
+                        </li><li ng-repeat="p in m.lesson[l].Pages" class="toc-page ng-scope" ng-class="{active: l==params.lessonId &amp;&amp; $index+1==params.pageNumber}" style="display: none;">
+                            <a href="http://127.0.0.1:3999/flowcontrol/7" ng-click="hideTOC(true)" class="ng-binding">If and else</a>
+                        </li><li ng-repeat="p in m.lesson[l].Pages" class="toc-page ng-scope" ng-class="{active: l==params.lessonId &amp;&amp; $index+1==params.pageNumber}" style="display: none;">
+                            <a href="http://127.0.0.1:3999/flowcontrol/8" ng-click="hideTOC(true)" class="ng-binding">Exercise: Loops and Functions</a>
+                        </li><li ng-repeat="p in m.lesson[l].Pages" class="toc-page ng-scope" ng-class="{active: l==params.lessonId &amp;&amp; $index+1==params.pageNumber}" style="display: none;">
+                            <a href="http://127.0.0.1:3999/flowcontrol/9" ng-click="hideTOC(true)" class="ng-binding">Switch</a>
+                        </li><li ng-repeat="p in m.lesson[l].Pages" class="toc-page ng-scope" ng-class="{active: l==params.lessonId &amp;&amp; $index+1==params.pageNumber}" style="display: none;">
+                            <a href="http://127.0.0.1:3999/flowcontrol/10" ng-click="hideTOC(true)" class="ng-binding">Switch evaluation order</a>
+                        </li><li ng-repeat="p in m.lesson[l].Pages" class="toc-page ng-scope" ng-class="{active: l==params.lessonId &amp;&amp; $index+1==params.pageNumber}" style="display: none;">
+                            <a href="http://127.0.0.1:3999/flowcontrol/11" ng-click="hideTOC(true)" class="ng-binding">Switch with no condition</a>
+                        </li><li ng-repeat="p in m.lesson[l].Pages" class="toc-page ng-scope" ng-class="{active: l==params.lessonId &amp;&amp; $index+1==params.pageNumber}" style="display: none;">
+                            <a href="http://127.0.0.1:3999/flowcontrol/12" ng-click="hideTOC(true)" class="ng-binding">Defer</a>
+                        </li><li ng-repeat="p in m.lesson[l].Pages" class="toc-page ng-scope" ng-class="{active: l==params.lessonId &amp;&amp; $index+1==params.pageNumber}" style="display: none;">
+                            <a href="http://127.0.0.1:3999/flowcontrol/13" ng-click="hideTOC(true)" class="ng-binding">Stacking defers</a>
+                        </li><li ng-repeat="p in m.lesson[l].Pages" class="toc-page ng-scope" ng-class="{active: l==params.lessonId &amp;&amp; $index+1==params.pageNumber}" style="display: none;">
+                            <a href="http://127.0.0.1:3999/flowcontrol/14" ng-click="hideTOC(true)" class="ng-binding">Congratulations!</a>
+                        </li>
+                    </ul>
+                </li><li ng-repeat="l in m.lessons" class="toc-lesson ng-scope" id="toc-l-moretypes" ng-class="{active: l==params.lessonId}">
+                    <span ng-click="toggleLesson(l)" class="ng-binding">More types: structs, slices, and maps.</span>
+                    <ul>
+                        <!-- ngRepeat: p in m.lesson[l].Pages --><li ng-repeat="p in m.lesson[l].Pages" class="toc-page ng-scope" ng-class="{active: l==params.lessonId &amp;&amp; $index+1==params.pageNumber}" style="display: none;">
+                            <a href="http://127.0.0.1:3999/moretypes/1" ng-click="hideTOC(true)" class="ng-binding">Pointers</a>
+                        </li><li ng-repeat="p in m.lesson[l].Pages" class="toc-page ng-scope" ng-class="{active: l==params.lessonId &amp;&amp; $index+1==params.pageNumber}" style="display: none;">
+                            <a href="http://127.0.0.1:3999/moretypes/2" ng-click="hideTOC(true)" class="ng-binding">Structs</a>
+                        </li><li ng-repeat="p in m.lesson[l].Pages" class="toc-page ng-scope" ng-class="{active: l==params.lessonId &amp;&amp; $index+1==params.pageNumber}" style="display: none;">
+                            <a href="http://127.0.0.1:3999/moretypes/3" ng-click="hideTOC(true)" class="ng-binding">Struct Fields</a>
+                        </li><li ng-repeat="p in m.lesson[l].Pages" class="toc-page ng-scope" ng-class="{active: l==params.lessonId &amp;&amp; $index+1==params.pageNumber}" style="display: none;">
+                            <a href="http://127.0.0.1:3999/moretypes/4" ng-click="hideTOC(true)" class="ng-binding">Pointers to structs</a>
+                        </li><li ng-repeat="p in m.lesson[l].Pages" class="toc-page ng-scope" ng-class="{active: l==params.lessonId &amp;&amp; $index+1==params.pageNumber}" style="display: none;">
+                            <a href="http://127.0.0.1:3999/moretypes/5" ng-click="hideTOC(true)" class="ng-binding">Struct Literals</a>
+                        </li><li ng-repeat="p in m.lesson[l].Pages" class="toc-page ng-scope" ng-class="{active: l==params.lessonId &amp;&amp; $index+1==params.pageNumber}" style="display: none;">
+                            <a href="http://127.0.0.1:3999/moretypes/6" ng-click="hideTOC(true)" class="ng-binding">Arrays</a>
+                        </li><li ng-repeat="p in m.lesson[l].Pages" class="toc-page ng-scope" ng-class="{active: l==params.lessonId &amp;&amp; $index+1==params.pageNumber}" style="display: none;">
+                            <a href="http://127.0.0.1:3999/moretypes/7" ng-click="hideTOC(true)" class="ng-binding">Slices</a>
+                        </li><li ng-repeat="p in m.lesson[l].Pages" class="toc-page ng-scope" ng-class="{active: l==params.lessonId &amp;&amp; $index+1==params.pageNumber}" style="display: none;">
+                            <a href="http://127.0.0.1:3999/moretypes/8" ng-click="hideTOC(true)" class="ng-binding">Slices are like references to arrays</a>
+                        </li><li ng-repeat="p in m.lesson[l].Pages" class="toc-page ng-scope" ng-class="{active: l==params.lessonId &amp;&amp; $index+1==params.pageNumber}" style="display: none;">
+                            <a href="http://127.0.0.1:3999/moretypes/9" ng-click="hideTOC(true)" class="ng-binding">Slice literals</a>
+                        </li><li ng-repeat="p in m.lesson[l].Pages" class="toc-page ng-scope" ng-class="{active: l==params.lessonId &amp;&amp; $index+1==params.pageNumber}" style="display: none;">
+                            <a href="http://127.0.0.1:3999/moretypes/10" ng-click="hideTOC(true)" class="ng-binding">Slice defaults</a>
+                        </li><li ng-repeat="p in m.lesson[l].Pages" class="toc-page ng-scope" ng-class="{active: l==params.lessonId &amp;&amp; $index+1==params.pageNumber}" style="display: none;">
+                            <a href="http://127.0.0.1:3999/moretypes/11" ng-click="hideTOC(true)" class="ng-binding">Slice length and capacity</a>
+                        </li><li ng-repeat="p in m.lesson[l].Pages" class="toc-page ng-scope" ng-class="{active: l==params.lessonId &amp;&amp; $index+1==params.pageNumber}" style="display: none;">
+                            <a href="http://127.0.0.1:3999/moretypes/12" ng-click="hideTOC(true)" class="ng-binding">Nil slices</a>
+                        </li><li ng-repeat="p in m.lesson[l].Pages" class="toc-page ng-scope" ng-class="{active: l==params.lessonId &amp;&amp; $index+1==params.pageNumber}" style="display: none;">
+                            <a href="http://127.0.0.1:3999/moretypes/13" ng-click="hideTOC(true)" class="ng-binding">Creating a slice with make</a>
+                        </li><li ng-repeat="p in m.lesson[l].Pages" class="toc-page ng-scope" ng-class="{active: l==params.lessonId &amp;&amp; $index+1==params.pageNumber}" style="display: none;">
+                            <a href="http://127.0.0.1:3999/moretypes/14" ng-click="hideTOC(true)" class="ng-binding">Slices of slices</a>
+                        </li><li ng-repeat="p in m.lesson[l].Pages" class="toc-page ng-scope" ng-class="{active: l==params.lessonId &amp;&amp; $index+1==params.pageNumber}" style="display: none;">
+                            <a href="http://127.0.0.1:3999/moretypes/15" ng-click="hideTOC(true)" class="ng-binding">Appending to a slice</a>
+                        </li><li ng-repeat="p in m.lesson[l].Pages" class="toc-page ng-scope" ng-class="{active: l==params.lessonId &amp;&amp; $index+1==params.pageNumber}" style="display: none;">
+                            <a href="http://127.0.0.1:3999/moretypes/16" ng-click="hideTOC(true)" class="ng-binding">Range</a>
+                        </li><li ng-repeat="p in m.lesson[l].Pages" class="toc-page ng-scope" ng-class="{active: l==params.lessonId &amp;&amp; $index+1==params.pageNumber}" style="display: none;">
+                            <a href="http://127.0.0.1:3999/moretypes/17" ng-click="hideTOC(true)" class="ng-binding">Range continued</a>
+                        </li><li ng-repeat="p in m.lesson[l].Pages" class="toc-page ng-scope" ng-class="{active: l==params.lessonId &amp;&amp; $index+1==params.pageNumber}" style="display: none;">
+                            <a href="http://127.0.0.1:3999/moretypes/18" ng-click="hideTOC(true)" class="ng-binding">Exercise: Slices</a>
+                        </li><li ng-repeat="p in m.lesson[l].Pages" class="toc-page ng-scope" ng-class="{active: l==params.lessonId &amp;&amp; $index+1==params.pageNumber}" style="display: none;">
+                            <a href="http://127.0.0.1:3999/moretypes/19" ng-click="hideTOC(true)" class="ng-binding">Maps</a>
+                        </li><li ng-repeat="p in m.lesson[l].Pages" class="toc-page ng-scope" ng-class="{active: l==params.lessonId &amp;&amp; $index+1==params.pageNumber}" style="display: none;">
+                            <a href="http://127.0.0.1:3999/moretypes/20" ng-click="hideTOC(true)" class="ng-binding">Map literals</a>
+                        </li><li ng-repeat="p in m.lesson[l].Pages" class="toc-page ng-scope" ng-class="{active: l==params.lessonId &amp;&amp; $index+1==params.pageNumber}" style="display: none;">
+                            <a href="http://127.0.0.1:3999/moretypes/21" ng-click="hideTOC(true)" class="ng-binding">Map literals continued</a>
+                        </li><li ng-repeat="p in m.lesson[l].Pages" class="toc-page ng-scope" ng-class="{active: l==params.lessonId &amp;&amp; $index+1==params.pageNumber}" style="display: none;">
+                            <a href="http://127.0.0.1:3999/moretypes/22" ng-click="hideTOC(true)" class="ng-binding">Mutating Maps</a>
+                        </li><li ng-repeat="p in m.lesson[l].Pages" class="toc-page ng-scope" ng-class="{active: l==params.lessonId &amp;&amp; $index+1==params.pageNumber}" style="display: none;">
+                            <a href="http://127.0.0.1:3999/moretypes/23" ng-click="hideTOC(true)" class="ng-binding">Exercise: Maps</a>
+                        </li><li ng-repeat="p in m.lesson[l].Pages" class="toc-page ng-scope" ng-class="{active: l==params.lessonId &amp;&amp; $index+1==params.pageNumber}" style="display: none;">
+                            <a href="http://127.0.0.1:3999/moretypes/24" ng-click="hideTOC(true)" class="ng-binding">Function values</a>
+                        </li><li ng-repeat="p in m.lesson[l].Pages" class="toc-page ng-scope" ng-class="{active: l==params.lessonId &amp;&amp; $index+1==params.pageNumber}" style="display: none;">
+                            <a href="http://127.0.0.1:3999/moretypes/25" ng-click="hideTOC(true)" class="ng-binding">Function closures</a>
+                        </li><li ng-repeat="p in m.lesson[l].Pages" class="toc-page ng-scope" ng-class="{active: l==params.lessonId &amp;&amp; $index+1==params.pageNumber}" style="display: none;">
+                            <a href="http://127.0.0.1:3999/moretypes/26" ng-click="hideTOC(true)" class="ng-binding">Exercise: Fibonacci closure</a>
+                        </li><li ng-repeat="p in m.lesson[l].Pages" class="toc-page ng-scope" ng-class="{active: l==params.lessonId &amp;&amp; $index+1==params.pageNumber}" style="display: none;">
+                            <a href="http://127.0.0.1:3999/moretypes/27" ng-click="hideTOC(true)" class="ng-binding">Congratulations!</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </li><li ng-repeat="m in toc.modules" class="toc-module ng-scope" id="toc-m-methods">
+            <span class="ng-binding">Methods and interfaces</span>
+            <ul>
+                <!-- ngRepeat: l in m.lessons --><li ng-repeat="l in m.lessons" class="toc-lesson ng-scope" id="toc-l-methods" ng-class="{active: l==params.lessonId}">
+                    <span ng-click="toggleLesson(l)" class="ng-binding">Methods and interfaces</span>
+                    <ul>
+                        <!-- ngRepeat: p in m.lesson[l].Pages --><li ng-repeat="p in m.lesson[l].Pages" class="toc-page ng-scope" ng-class="{active: l==params.lessonId &amp;&amp; $index+1==params.pageNumber}" style="display: none;">
+                            <a href="http://127.0.0.1:3999/methods/1" ng-click="hideTOC(true)" class="ng-binding">Methods</a>
+                        </li><li ng-repeat="p in m.lesson[l].Pages" class="toc-page ng-scope" ng-class="{active: l==params.lessonId &amp;&amp; $index+1==params.pageNumber}" style="display: none;">
+                            <a href="http://127.0.0.1:3999/methods/2" ng-click="hideTOC(true)" class="ng-binding">Methods are functions</a>
+                        </li><li ng-repeat="p in m.lesson[l].Pages" class="toc-page ng-scope" ng-class="{active: l==params.lessonId &amp;&amp; $index+1==params.pageNumber}" style="display: none;">
+                            <a href="http://127.0.0.1:3999/methods/3" ng-click="hideTOC(true)" class="ng-binding">Methods continued</a>
+                        </li><li ng-repeat="p in m.lesson[l].Pages" class="toc-page ng-scope" ng-class="{active: l==params.lessonId &amp;&amp; $index+1==params.pageNumber}" style="display: none;">
+                            <a href="http://127.0.0.1:3999/methods/4" ng-click="hideTOC(true)" class="ng-binding">Pointer receivers</a>
+                        </li><li ng-repeat="p in m.lesson[l].Pages" class="toc-page ng-scope" ng-class="{active: l==params.lessonId &amp;&amp; $index+1==params.pageNumber}" style="display: none;">
+                            <a href="http://127.0.0.1:3999/methods/5" ng-click="hideTOC(true)" class="ng-binding">Pointers and functions</a>
+                        </li><li ng-repeat="p in m.lesson[l].Pages" class="toc-page ng-scope" ng-class="{active: l==params.lessonId &amp;&amp; $index+1==params.pageNumber}" style="display: none;">
+                            <a href="http://127.0.0.1:3999/methods/6" ng-click="hideTOC(true)" class="ng-binding">Methods and pointer indirection</a>
+                        </li><li ng-repeat="p in m.lesson[l].Pages" class="toc-page ng-scope" ng-class="{active: l==params.lessonId &amp;&amp; $index+1==params.pageNumber}" style="display: none;">
+                            <a href="http://127.0.0.1:3999/methods/7" ng-click="hideTOC(true)" class="ng-binding">Methods and pointer indirection (2)</a>
+                        </li><li ng-repeat="p in m.lesson[l].Pages" class="toc-page ng-scope" ng-class="{active: l==params.lessonId &amp;&amp; $index+1==params.pageNumber}" style="display: none;">
+                            <a href="http://127.0.0.1:3999/methods/8" ng-click="hideTOC(true)" class="ng-binding">Choosing a value or pointer receiver</a>
+                        </li><li ng-repeat="p in m.lesson[l].Pages" class="toc-page ng-scope" ng-class="{active: l==params.lessonId &amp;&amp; $index+1==params.pageNumber}" style="display: none;">
+                            <a href="http://127.0.0.1:3999/methods/9" ng-click="hideTOC(true)" class="ng-binding">Interfaces</a>
+                        </li><li ng-repeat="p in m.lesson[l].Pages" class="toc-page ng-scope" ng-class="{active: l==params.lessonId &amp;&amp; $index+1==params.pageNumber}" style="display: none;">
+                            <a href="http://127.0.0.1:3999/methods/10" ng-click="hideTOC(true)" class="ng-binding">Interfaces are implemented implicitly</a>
+                        </li><li ng-repeat="p in m.lesson[l].Pages" class="toc-page ng-scope" ng-class="{active: l==params.lessonId &amp;&amp; $index+1==params.pageNumber}" style="display: none;">
+                            <a href="http://127.0.0.1:3999/methods/11" ng-click="hideTOC(true)" class="ng-binding">Interface values</a>
+                        </li><li ng-repeat="p in m.lesson[l].Pages" class="toc-page ng-scope" ng-class="{active: l==params.lessonId &amp;&amp; $index+1==params.pageNumber}" style="display: none;">
+                            <a href="http://127.0.0.1:3999/methods/12" ng-click="hideTOC(true)" class="ng-binding">Interface values with nil underlying values</a>
+                        </li><li ng-repeat="p in m.lesson[l].Pages" class="toc-page ng-scope" ng-class="{active: l==params.lessonId &amp;&amp; $index+1==params.pageNumber}" style="display: none;">
+                            <a href="http://127.0.0.1:3999/methods/13" ng-click="hideTOC(true)" class="ng-binding">Nil interface values</a>
+                        </li><li ng-repeat="p in m.lesson[l].Pages" class="toc-page ng-scope" ng-class="{active: l==params.lessonId &amp;&amp; $index+1==params.pageNumber}" style="display: none;">
+                            <a href="http://127.0.0.1:3999/methods/14" ng-click="hideTOC(true)" class="ng-binding">The empty interface</a>
+                        </li><li ng-repeat="p in m.lesson[l].Pages" class="toc-page ng-scope" ng-class="{active: l==params.lessonId &amp;&amp; $index+1==params.pageNumber}" style="display: none;">
+                            <a href="http://127.0.0.1:3999/methods/15" ng-click="hideTOC(true)" class="ng-binding">Type assertions</a>
+                        </li><li ng-repeat="p in m.lesson[l].Pages" class="toc-page ng-scope" ng-class="{active: l==params.lessonId &amp;&amp; $index+1==params.pageNumber}" style="display: none;">
+                            <a href="http://127.0.0.1:3999/methods/16" ng-click="hideTOC(true)" class="ng-binding">Type switches</a>
+                        </li><li ng-repeat="p in m.lesson[l].Pages" class="toc-page ng-scope" ng-class="{active: l==params.lessonId &amp;&amp; $index+1==params.pageNumber}" style="display: none;">
+                            <a href="http://127.0.0.1:3999/methods/17" ng-click="hideTOC(true)" class="ng-binding">Stringers</a>
+                        </li><li ng-repeat="p in m.lesson[l].Pages" class="toc-page ng-scope" ng-class="{active: l==params.lessonId &amp;&amp; $index+1==params.pageNumber}" style="display: none;">
+                            <a href="http://127.0.0.1:3999/methods/18" ng-click="hideTOC(true)" class="ng-binding">Exercise: Stringers</a>
+                        </li><li ng-repeat="p in m.lesson[l].Pages" class="toc-page ng-scope" ng-class="{active: l==params.lessonId &amp;&amp; $index+1==params.pageNumber}" style="display: none;">
+                            <a href="http://127.0.0.1:3999/methods/19" ng-click="hideTOC(true)" class="ng-binding">Errors</a>
+                        </li><li ng-repeat="p in m.lesson[l].Pages" class="toc-page ng-scope" ng-class="{active: l==params.lessonId &amp;&amp; $index+1==params.pageNumber}" style="display: none;">
+                            <a href="http://127.0.0.1:3999/methods/20" ng-click="hideTOC(true)" class="ng-binding">Exercise: Errors</a>
+                        </li><li ng-repeat="p in m.lesson[l].Pages" class="toc-page ng-scope" ng-class="{active: l==params.lessonId &amp;&amp; $index+1==params.pageNumber}" style="display: none;">
+                            <a href="http://127.0.0.1:3999/methods/21" ng-click="hideTOC(true)" class="ng-binding">Readers</a>
+                        </li><li ng-repeat="p in m.lesson[l].Pages" class="toc-page ng-scope" ng-class="{active: l==params.lessonId &amp;&amp; $index+1==params.pageNumber}" style="display: none;">
+                            <a href="http://127.0.0.1:3999/methods/22" ng-click="hideTOC(true)" class="ng-binding">Exercise: Readers</a>
+                        </li><li ng-repeat="p in m.lesson[l].Pages" class="toc-page ng-scope" ng-class="{active: l==params.lessonId &amp;&amp; $index+1==params.pageNumber}" style="display: none;">
+                            <a href="http://127.0.0.1:3999/methods/23" ng-click="hideTOC(true)" class="ng-binding">Exercise: rot13Reader</a>
+                        </li><li ng-repeat="p in m.lesson[l].Pages" class="toc-page ng-scope" ng-class="{active: l==params.lessonId &amp;&amp; $index+1==params.pageNumber}" style="display: none;">
+                            <a href="http://127.0.0.1:3999/methods/24" ng-click="hideTOC(true)" class="ng-binding">Images</a>
+                        </li><li ng-repeat="p in m.lesson[l].Pages" class="toc-page ng-scope" ng-class="{active: l==params.lessonId &amp;&amp; $index+1==params.pageNumber}" style="display: none;">
+                            <a href="http://127.0.0.1:3999/methods/25" ng-click="hideTOC(true)" class="ng-binding">Exercise: Images</a>
+                        </li><li ng-repeat="p in m.lesson[l].Pages" class="toc-page ng-scope" ng-class="{active: l==params.lessonId &amp;&amp; $index+1==params.pageNumber}" style="display: none;">
+                            <a href="http://127.0.0.1:3999/methods/26" ng-click="hideTOC(true)" class="ng-binding">Congratulations!</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </li><li ng-repeat="m in toc.modules" class="toc-module ng-scope" id="toc-m-concurrency">
+            <span class="ng-binding">Concurrency</span>
+            <ul>
+                <!-- ngRepeat: l in m.lessons --><li ng-repeat="l in m.lessons" class="toc-lesson ng-scope" id="toc-l-concurrency" ng-class="{active: l==params.lessonId}">
+                    <span ng-click="toggleLesson(l)" class="ng-binding">Concurrency</span>
+                    <ul>
+                        <!-- ngRepeat: p in m.lesson[l].Pages --><li ng-repeat="p in m.lesson[l].Pages" class="toc-page ng-scope" ng-class="{active: l==params.lessonId &amp;&amp; $index+1==params.pageNumber}" style="display: none;">
+                            <a href="http://127.0.0.1:3999/concurrency/1" ng-click="hideTOC(true)" class="ng-binding">Goroutines</a>
+                        </li><li ng-repeat="p in m.lesson[l].Pages" class="toc-page ng-scope" ng-class="{active: l==params.lessonId &amp;&amp; $index+1==params.pageNumber}" style="display: none;">
+                            <a href="http://127.0.0.1:3999/concurrency/2" ng-click="hideTOC(true)" class="ng-binding">Channels</a>
+                        </li><li ng-repeat="p in m.lesson[l].Pages" class="toc-page ng-scope" ng-class="{active: l==params.lessonId &amp;&amp; $index+1==params.pageNumber}" style="display: none;">
+                            <a href="http://127.0.0.1:3999/concurrency/3" ng-click="hideTOC(true)" class="ng-binding">Buffered Channels</a>
+                        </li><li ng-repeat="p in m.lesson[l].Pages" class="toc-page ng-scope" ng-class="{active: l==params.lessonId &amp;&amp; $index+1==params.pageNumber}" style="display: none;">
+                            <a href="http://127.0.0.1:3999/concurrency/4" ng-click="hideTOC(true)" class="ng-binding">Range and Close</a>
+                        </li><li ng-repeat="p in m.lesson[l].Pages" class="toc-page ng-scope" ng-class="{active: l==params.lessonId &amp;&amp; $index+1==params.pageNumber}" style="display: none;">
+                            <a href="http://127.0.0.1:3999/concurrency/5" ng-click="hideTOC(true)" class="ng-binding">Select</a>
+                        </li><li ng-repeat="p in m.lesson[l].Pages" class="toc-page ng-scope" ng-class="{active: l==params.lessonId &amp;&amp; $index+1==params.pageNumber}" style="display: none;">
+                            <a href="http://127.0.0.1:3999/concurrency/6" ng-click="hideTOC(true)" class="ng-binding">Default Selection</a>
+                        </li><li ng-repeat="p in m.lesson[l].Pages" class="toc-page ng-scope" ng-class="{active: l==params.lessonId &amp;&amp; $index+1==params.pageNumber}" style="display: none;">
+                            <a href="http://127.0.0.1:3999/concurrency/7" ng-click="hideTOC(true)" class="ng-binding">Exercise: Equivalent Binary Trees</a>
+                        </li><li ng-repeat="p in m.lesson[l].Pages" class="toc-page ng-scope" ng-class="{active: l==params.lessonId &amp;&amp; $index+1==params.pageNumber}" style="display: none;">
+                            <a href="http://127.0.0.1:3999/concurrency/8" ng-click="hideTOC(true)" class="ng-binding">Exercise: Equivalent Binary Trees</a>
+                        </li><li ng-repeat="p in m.lesson[l].Pages" class="toc-page ng-scope" ng-class="{active: l==params.lessonId &amp;&amp; $index+1==params.pageNumber}" style="display: none;">
+                            <a href="http://127.0.0.1:3999/concurrency/9" ng-click="hideTOC(true)" class="ng-binding">sync.Mutex</a>
+                        </li><li ng-repeat="p in m.lesson[l].Pages" class="toc-page ng-scope" ng-class="{active: l==params.lessonId &amp;&amp; $index+1==params.pageNumber}" style="display: none;">
+                            <a href="http://127.0.0.1:3999/concurrency/10" ng-click="hideTOC(true)" class="ng-binding">Exercise: Web Crawler</a>
+                        </li><li ng-repeat="p in m.lesson[l].Pages" class="toc-page ng-scope" ng-class="{active: l==params.lessonId &amp;&amp; $index+1==params.pageNumber}" style="display: none;">
+                            <a href="http://127.0.0.1:3999/concurrency/11" ng-click="hideTOC(true)" class="ng-binding">Where to Go from here...</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+    </ul>
+    <div class="click-catcher" ng-click="hideTOC(false)"></div>
+</div>
+</div>
+
+    <div ng-view="" class=""><div id="editor-container" onpageup="prevPage()" onpagedown="nextPage()" class="ng-scope" tabindex="0">
+    <div class="relative-content" ng-="">
+        <div vertical-slide="" left="#left-side" right="#right-side" class="ui-draggable"></div>
+        <div id="left-side">
+            <div class="relative-content" autofocus="toc.lessons[lessonId].Pages[curPage-1].Files.length==0" tabindex="0">
+                <div class="slide-content ng-binding" ng-bind-html-unsafe="toc.lessons[lessonId].Pages[curPage-1].Content">
+  <h2>Functions</h2>
+  
+  
+  <p>
+    A function can take zero or more arguments.
+  </p>
+  
+
+  
+  <p>
+    In this example, <code>add</code> takes two parameters of type <code>int</code>.
+  </p>
+  
+
+  
+  <p>
+    Notice that the type comes <i>after</i> the variable name.
+  </p>
+  
+
+  
+  <p>
+    (For more about why types look the way they do, see the <a href="https://blog.golang.org/gos-declaration-syntax" target="_blank">article on Go's declaration syntax</a>.)
+  </p>
+  
+
+	
+		
+	
+
+</div>
+
+                <div class="bar module-bar">
+                    <a href="http://127.0.0.1:3999/basics/4#" class="prev-page" ng-click="prevPageClick($event)">&lt;</a>
+                    <span class="ng-binding">4/17</span>
+                    <a href="http://127.0.0.1:3999/basics/4#" class="next-page" ng-click="nextPageClick($event)">&gt;</a>
+                </div>
+            </div>
+        </div>
+
+        <div id="right-side" class="relative-content">
+            <div id="explorer" ng-class="{hidden: toc.lessons[lessonId].Pages[curPage-1].Files.length==0}">
+                <!-- ngRepeat: f in toc.lessons[lessonId].Pages[curPage-1].Files --><a class="menu-button ng-scope ng-binding active" ng-repeat="f in toc.lessons[lessonId].Pages[curPage-1].Files" ng-click="openFile($index)" ng-class="{active: $index==curFile}">functions.go</a>
+                <a syntax-checkbox="" ng-class="{active: editor.syntax}" class="menu-button syntax-checkbox">Syntax</a>
+                <a imports-checkbox="" ng-class="{active: editor.imports}" class="menu-button imports-checkbox">Imports</a>
+            </div>
+
+            <div class="relative-content" ng-class="{hidden: toc.lessons[lessonId].Pages[curPage-1].Files.length==0}">
+
+                <div id="top-part">
+                    <div class="relative-content">
+                        <div id="file-editor">
+                            <textarea ui-codemirror="" ng-model="toc.lessons[lessonId].Pages[curPage-1].Files[curFile].Content" class="ng-valid ng-dirty" style="display: none;"></textarea><div class="CodeMirror cm-s-default CodeMirror-wrap CodeMirror-focused"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 80px; left: 125px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;" tabindex="0"></textarea></div><div class="CodeMirror-vscrollbar" cm-not-content="true"><div style="min-width: 1px; height: 0px;"></div></div><div class="CodeMirror-hscrollbar" cm-not-content="true"><div style="height: 100%; min-height: 1px; width: 0px;"></div></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 33px; margin-bottom: -17px; border-right-width: 13px; min-height: 236px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-cursors" style=""><div class="CodeMirror-cursor" style="left: 92px; top: 76px; height: 19px;">&nbsp;</div></div><div class="CodeMirror-code" role="presentation" style=""><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -33px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">1</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">package main</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -33px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">2</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="">​</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -33px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">3</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">import "fmt"</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -33px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">4</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="">​</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -33px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">5</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">var sum int</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -33px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">6</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">sum := func add(x int,y int) int {return x+y}</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -33px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">7</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="">​</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -33px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">8</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">func main() {</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -33px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">9</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="	">    </span>fmt.Println(sun(42,13))</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -33px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">10</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">}</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -33px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">11</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="">​</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -33px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">12</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="">​</span></span></pre></div></div></div></div></div></div><div style="position: absolute; height: 13px; width: 1px; border-bottom: 0px solid transparent; top: 236px;"></div><div class="CodeMirror-gutters" style="height: 249px;"><div class="CodeMirror-gutter CodeMirror-linenumbers" style="width: 29px;"></div></div></div></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div horizontal-slide="" top="#top-part" bottom="#bottom-part" class="ui-draggable"></div>
+
+                <div id="bottom-part">
+                    <div class="relative-content">
+                        <!--div id="file-menu" ng-controller="OutputCtrl"-->
+                        <div id="file-menu">
+                            <a ng-show="job == null" class="menu-button" id="run" ng-click="run()" style="">Run</a>
+                            <a ng-show="job != null" class="menu-button" id="kill" ng-click="kill()" style="display: none;">Kill</a>
+                            <a class="menu-button" id="format" ng-click="format()">Format</a>
+                            <a class="menu-button" id="reset" ng-click="reset()">Reset</a>
+                        </div>
+
+                        <!-- ngRepeat: f in toc.lessons[lessonId].Pages[curPage-1].Files --><div class="output ng-scope ng-binding active" ng-repeat="f in toc.lessons[lessonId].Pages[curPage-1].Files" ng-class="{active: $index==curFile}" ng-bind-html-unsafe="f.Output"><pre class="info"><span class="stderr"># command-line-arguments
+.\compile20.go:5:8: syntax error: unexpected newline, expecting type
+.\compile20.go:6:1: syntax error: non-declaration statement outside function body
+</span><span class="system">
+Program exited: exit status 2</span></pre></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+</div>
+
+    <script src="./A Tour of Go_files/script.js.download"></script>
+    <script>
+    window.transport = SocketTransport();
+    window.socketAddr = "ws:\/\/127.0.0.1:3999\/socket";
+
+    function highlight(selector) {
+        var speed = 50;
+        var obj = $(selector).stop(true, true)
+        for (var i = 0; i < 5; i++) {
+            obj.addClass("highlight", speed)
+            obj.delay(speed)
+            obj.removeClass("highlight", speed)
+        }
+    }
+
+    function highlightAndClick(selector) {
+        highlight(selector);
+        setTimeout(function() {
+            $(selector)[0].click()
+        }, 750);
+    }
+
+    function click(selector) {
+        $(selector)[0].click();
+    }
+    </script>
+
+
+
+</body></html>

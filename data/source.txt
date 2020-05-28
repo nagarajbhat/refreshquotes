@@ -1,0 +1,9 @@
+quotes - https://gist.github.com/JakubPetriska/060958fd744ca34f099e947cd080b540
+quotes_all - https://www.researchgate.net/publication/304742521_CSV_dataset_of_76000_quotes_suitable_for_quotes_recommender_systems_or_other_analysis
+
+
+
+
+img - 
+redbook1.png -> Photo by Pierre Bamin on Unsplash https://images.unsplash.com/photo-1568059168173-ec9935fb19d0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1371&q=80
+redsticks1 -> Photo by Irena Carpaccio on Unsplash https://images.unsplash.com/photo-1568364383577-e9d9bfc8892a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80
