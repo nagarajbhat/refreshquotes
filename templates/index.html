@@ -10,6 +10,10 @@
 
   <title>Refresh Quotes</title>
 
+  <!-- favicon-->
+  <link rel="icon" type="image/png" sizes="32x32" href="/static/favicon/favicon-32x32.png">
+
+
   <!-- Bootstrap Core CSS -->
   <link href="static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
@@ -25,7 +29,9 @@
 
 <body id="page-top">
 
+
   <!-- Navigation -->
+  <!--
   <a class="menu-toggle rounded" href="#">
     <i class="fas fa-bars"></i>
   </a>
@@ -51,10 +57,13 @@
       </li>
     </ul>
   </nav>
-
+-->
   <!-- Header -->
   <header class="masthead d-flex" style="height: 800px;">
+    
     <div class="container text-center my-auto">
+     <p>Refresh Quotes</p>
+
       <h2 class="mr-4">"{{quote}}"</h2>
       <h3 class="ml-5">
         <em>- {{author}}</em>
@@ -62,10 +71,11 @@
       <a class="btn-dark" href="https://www.google.com/search?q={{author}}">Look up this author</a>
      <p>------------------------------------------------------------------------------</p>
 
-      <p class="mr-4">Refresh for more quotes <a href="."><i class="fas fa-redo"></i></a>
-</p>
-<a class="btn btn-primary btn-xl js-scroll-trigger" href="https://www.nagarajbhat.com">Made with <i class="fas fa-heart"></i> by Nagaraj Bhat</a>
+      
 
+<p><a class="btn btn-primary btn-xl js-scroll-trigger" href=".">Refresh for more Quotes or Press here!  <i class="fas fa-redo"></i></a></a></p>
+<br>
+<p class="mr-4">Made with <i class="fas fa-heart"></i> by <a href="https://www.nagarajbhat.com">Nagaraj Bhat </a></p>
     </div>
     <div class="overlay"></div>
   </header>
