@@ -303,14 +303,25 @@ footer.footer .social-link {
   width: 4rem;
   line-height: 4.3rem;
   font-size: 1.5rem;
-  background-color: #1D809F;
+  /*background-color: #1D809F;*/
   transition: background-color 0.15s ease-in-out;
   box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.1);
+
+  /*copied from bt-secondary*/
+  background-color: #ecb807 !important;
+  border-color: #ecb807 !important;
+  color: #fff !important;
 }
 
+
 footer.footer .social-link:hover {
-  background-color: #155d74;
+  /*background-color: #155d74;*/
   text-decoration: none;
+
+  /*copied from bt-secondary:hover*/
+  ground-color: #ba9106 !important;
+  border-color: #ba9106 !important;
+
 }
 
 a {
