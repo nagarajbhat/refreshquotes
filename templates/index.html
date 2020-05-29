@@ -65,10 +65,13 @@
   <header class="masthead d-flex" style="height: 800px;">
     
     <div class="container text-center my-auto" style ="filter: drop-shadow(.04em .04em #ecb807);">
-     
-
+     {% if quote|length < 130 %}
       <h2 class="mr-4" style="margin-top: -150px;font-family: 'Courier Prime';">"{{quote}}"</h2>
+      {% else %}
+      <h2 class="mr-4" style="margin-top: -100px;font-family: 'Courier Prime';">"{{quote}}"</h2>
+      {%endif%}
       <h3 class="ml-5">
+
         <em>- {{author}}</em>
       </h3>
       <a class="btn-dark" href="https://www.google.com/search?q={{author}}">Look up this author</a>
