@@ -12,6 +12,7 @@ def randomquote(data):
 	return author,quote
 
 """
+
 #this is for inspquotes.csv ->
 
 #data = pd.read_csv('data/n_quotes_all.csv',names=['AUTHOR','QUOTE','GENRE'],sep=';')
